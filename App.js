@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 
 export default function App() {
   //la logica del codigo
-  //definicion de hook de estado
+  //definicion de REAC hookS de estado
   const{numero1,setNumero1}=useState("");
   const{numero2,setNumero2}=useState("");
   const{resultado,setResultado}=useState("");
