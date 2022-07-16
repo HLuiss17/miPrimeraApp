@@ -77,7 +77,7 @@ export default function App() {
         onPress={restar}
       />
       <Button
-      color="yellow"
+      color="green"
         title="Multiplicar"
         onPress={multiplicar}
       />
