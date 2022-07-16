@@ -6,18 +6,51 @@ import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 export default function App() {
   //la logica del codigo
   //definicion de REAC hookS de estado
-  const{numero1,setNumero1}=useState("");
-  const{numero2,setNumero2}=useState("");
-  const{resultado,setResultado}=useState("");
+  const[numero1,setNumero1]=useState("");
+  const[numero2,setNumero2]=useState("");
+
   //funcion tipo flecha
+  //--------------RESTAR-------------------------------
   const sumar=()=>{
-  resultado=numero1+numero2;
-   Alert.alert('la suma de num1 y num2 es'+resultado);
+  let resultado=parseFloat(numero1)+parseFloat(numero2);
+  if(numero1>0 && numero2>0){
+    Alert.alert("La suma de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+resultado)  
+  }else{
+    Alert.alert("Ingresa los valores positivos");
   };
+  }
+  //--------------RESTAR-------------------------------
+  const restar=()=>{
+    let resta=parseFloat(numero1)-parseFloat(numero2);
+    if(numero1>0 && numero2>0){
+      Alert.alert("La resta de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+resta)
+    }else{
+      Alert.alert("Ingresa los valores positivos");
+    };
+    }
+    //--------------MULTIPLICAR-------------------------------
+    const multiplicar=()=>{
+      let mult=parseFloat(numero1)*parseFloat(numero2);
+      if(numero1>0 && numero2>0){
+        Alert.alert("La multiplicaciòn de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+mult)
+      }else{
+        Alert.alert("Ingresa los valores positivos");
+      };
+      } 
+      //--------------DIVIDIR-------------------------------
+    const dividir=()=>{
+      let div=parseFloat(numero1)/parseFloat(numero2);
+      if(numero1>0 && numero2>0){
+        Alert.alert("La diviciòn de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+div)
+      }else{
+        Alert.alert("Ingresa los valores positivos");
+      };
+      } 
+  
   //Return es la vista
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>Hola Luis</Text>
+      <Text style={styles.texto}>Operaciones Matematicas</Text>
       <StatusBar style="auto" />
       <TextInput
         style={styles.input}
@@ -37,6 +70,21 @@ export default function App() {
       color="blue"
         title="Sumar"
         onPress={sumar}
+      />
+      <Button
+      color="red"
+        title="Resta"
+        onPress={restar}
+      />
+      <Button
+      color="yellow"
+        title="Multiplicar"
+        onPress={multiplicar}
+      />
+      <Button
+      color="black"
+        title="Dividir"
+        onPress={dividir}
       />
     </View>
   );
