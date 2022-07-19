@@ -6,47 +6,47 @@ import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 export default function App() {
   //la logica del codigo
   //definicion de REAC hookS de estado
-  const[numero1,setNumero1]=useState("");
-  const[numero2,setNumero2]=useState("");
+  const [numero1, setNumero1] = useState("");
+  const [numero2, setNumero2] = useState("");
 
   //funcion tipo flecha
   //--------------RESTAR-------------------------------
-  const sumar=()=>{
-  let resultado=parseFloat(numero1)+parseFloat(numero2);
-  if(numero1>0 && numero2>0){
-    Alert.alert("La suma de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+resultado)  
-  }else{
-    Alert.alert("Ingresa los valores positivos");
-  };
-  }
-  //--------------RESTAR-------------------------------
-  const restar=()=>{
-    let resta=parseFloat(numero1)-parseFloat(numero2);
-    if(numero1>0 && numero2>0){
-      Alert.alert("La resta de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+resta)
-    }else{
+  const sumar = () => {
+    let resultado = parseFloat(numero1) + parseFloat(numero2);
+    if (numero1 > 0 && numero2 > 0) {
+      Alert.alert("La suma de Numero1: " + numero1 + " " + " y numero2: " + " " + numero2 + "  " + "es igual a: " + resultado)
+    } else {
       Alert.alert("Ingresa los valores positivos");
     };
-    }
-    //--------------MULTIPLICAR-------------------------------
-    const multiplicar=()=>{
-      let mult=parseFloat(numero1)*parseFloat(numero2);
-      if(numero1>0 && numero2>0){
-        Alert.alert("La multiplicaciòn de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+mult)
-      }else{
-        Alert.alert("Ingresa los valores positivos");
-      };
-      } 
-      //--------------DIVIDIR-------------------------------
-    const dividir=()=>{
-      let div=parseFloat(numero1)/parseFloat(numero2);
-      if(numero1>0 && numero2>0){
-        Alert.alert("La diviciòn de Numero1: "+numero1+" "+" y numero2: "+" "+numero2+"  "+"es igual a: "+div)
-      }else{
-        Alert.alert("Ingresa los valores positivos");
-      };
-      } 
-  
+  }
+  //--------------RESTAR-------------------------------
+  const restar = () => {
+    let resta = parseFloat(numero1) - parseFloat(numero2);
+    if (numero1 > 0 && numero2 > 0) {
+      Alert.alert("La resta de Numero1: " + numero1 + " " + " y numero2: " + " " + numero2 + "  " + "es igual a: " + resta)
+    } else {
+      Alert.alert("Ingresa los valores positivos");
+    };
+  }
+  //--------------MULTIPLICAR-------------------------------
+  const multiplicar = () => {
+    let mult = parseFloat(numero1) * parseFloat(numero2);
+    if (numero1 > 0 && numero2 > 0) {
+      Alert.alert("La multiplicaciòn de Numero1: " + numero1 + " " + " y numero2: " + " " + numero2 + "  " + "es igual a: " + mult)
+    } else {
+      Alert.alert("Ingresa los valores positivos");
+    };
+  }
+  //--------------DIVIDIR-------------------------------
+  const dividir = () => {
+    let div = parseFloat(numero1) / parseFloat(numero2);
+    if (numero1 > 0 && numero2 > 0) {
+      Alert.alert("La diviciòn de Numero1: " + numero1 + " " + " y numero2: " + " " + numero2 + "  " + "es igual a: " + div)
+    } else {
+      Alert.alert("Ingresa los valores positivos");
+    };
+  }
+
   //Return es la vista
   return (
     <View style={styles.container}>
@@ -54,35 +54,36 @@ export default function App() {
       <StatusBar style="auto" />
       <TextInput
         style={styles.input}
-        onChangeText={(value)=>setNumero1(value)}
+        onChangeText={(value) => setNumero1(value)}
         value={numero1}
         placeholder="Ingrese el primer valor"
         keyboardType="numeric"
       />
       <TextInput
-         style={styles.input}
-         onChangeText={(value)=>setNumero2(value)}
-         value={numero2}
-         placeholder="Ingrese el segundo valor"
-         keyboardType="numeric"
+        style={styles.input}
+        onChangeText={(value) => setNumero2(value)}
+        value={numero2}
+        placeholder="Ingrese el segundo valor"
+        keyboardType="numeric"
       />
       <Button
-      color="blue"
+        color="blue"
         title="Sumar"
         onPress={sumar}
       />
       <Button
-      color="red"
+        color="red"
         title="Resta"
         onPress={restar}
       />
       <Button
-      color="green"
+        color="green"
         title="Multiplicar"
         onPress={multiplicar}
       />
       <Button
-      color="black"
+        size="large"
+        color="black"
         title="Dividir"
         onPress={dividir}
       />
@@ -99,15 +100,15 @@ const styles = StyleSheet.create({
   texto: {
     fontSize: 50,
   },
-  input:{
-    borderWidth:1,
-    borderColor:'gray',
-    width:'80%',
-    padding:10,
-    marginTop:10,
+  input: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    width: '80%',
+    padding: 10,
+    marginTop: 10,
 
   }
-  
+
 
   // crear dos cajas de texto imputs donde se pueda pponer numero 1 y 2 
   // boton 
